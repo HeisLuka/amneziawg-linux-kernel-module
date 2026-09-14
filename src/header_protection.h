@@ -4,7 +4,12 @@
 #include "messages.h"
 
 #include <linux/types.h>
+#include <linux/version.h>
+#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 5, 0)
+#include "compat/chacha.h"
+#else
 #include <crypto/chacha.h>
+#endif
 
 struct wg_device;
 

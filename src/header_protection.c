@@ -1,8 +1,6 @@
 #include "header_protection.h"
 #include "device.h"
 
-#include <crypto/chacha.h>
-
 bool awg_header_protection_init(struct chacha_state *state, struct wg_device *wg, u8 *nonce) {
 	struct header_protection* p = &wg->header_protection;
 	bool res = false;
